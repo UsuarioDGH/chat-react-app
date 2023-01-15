@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/*.App {
+  background-color: darkslategrey;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  padding: 0;
+  font-size: calc(9px + 2vmin);
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(52, 52, 68);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-bar{
+  padding: 10px 30px;
+  display: flex;
+}
+.nav-bar h1 {
+  position: absolute;
+  left: 0;
+  margin-top: 1px;
+  margin-left: 10px;
+}
+.nav-bar button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-bar .sign-out {
+  position: absolute;
+  right: 10px;
+  width: 100px;
+  height: 30px;
+  top: 15px;
+  border: 2px solid;
+  border-color: aqua;
+  background-color: darkslategrey;
+  border-radius: 10px;
+  color: aliceblue;
 }
+
+.content {
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  border: 1px solid;
+
+}
+
+.welcome {
+  margin-top: 5%;
+}
+
+.welcome button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.chat-box {
+  display: flex;
+  margin: 0;
+  width: 1000px;
+  border: 2px solid;
+}
+
+.send-message {
+  position: fixed;
+  width: auto;
+  height: 95px;
+  position: relative;
+  bottom: -84%;
+  padding: 20px;
+  background-color: rgb(90, 111, 129);
+}
+
+.form-input__input {
+  width: 860px;
+  height: 50px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 15px;
+  border: none;
+}
+
+.send-message button {
+  width: 95px;
+  height: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  background-color: rgb(84, 132, 74);
+  color: aliceblue;
+   
+}*/
+html,
+body {
+  max-width: 100vw;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+button,
+input {
+  cursor: pointer;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1c2c4c;
+  color: #4c768d;
+}
+
+/* navbar */
+.nav-bar {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4c768d;
+  color: #242443;
+  height: 60px;
+}
+.sign-in {
+  border: none;
+  background-color: transparent;
+}
+.sign-in > img {
+  height: 30px;
+  width: auto;
+}
+.sign-out {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #88dded;
+  border: 1px solid #1c2c4c;
+  background-color: #1c2c4c;
+  font-weight: 600;
+}
+
+/* welcome page */
+.welcome {
+  padding: 30px;
+  text-align: center;
+  margin-top: 40px;
+  color: #7cc5d9;
+}
+.welcome :is(h2, p, img) {
+  margin-bottom: 20px;
+}
+
+/* chat component */
+.messages-wrapper {
+  padding: 30px;
+  margin-bottom: 60px;
+}
+.chat-bubble {
+  border-radius: 20px 20px 20px 0;
+  padding: 15px;
+  background-color: #7cc5d9;
+  color: #1c2c4c;
+  width: max-content;
+  max-width: calc(100% - 50px);
+  box-shadow: -2px 2px 1px 1px #4c768d;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.chat-bubble.right {
+  margin-left: auto;
+  border-radius: 20px 20px 0 20px;
+  background-color: #fff;
+  box-shadow: -2px 2px 1px 1px #88dded;
+}
+.chat-bubble__left {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #1c2c4c;
+}
+.user-message {
+  word-break: break-all;
+}
+.message-time {
+  display: block;
+  text-align: right;
+}
+
+/* send message */
+.send-message {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 20px 30px;
+  background-color: #4c768d;
+  display: flex;
+}
+.send-message > input {
+  height: 40px;
+  padding: 10px 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  flex-grow: 1;
+  background-color: white;
+  color: #1c2c4c;
+  font-size: 1rem;
+}
+.send-message > input:placeholder {
+  color: #ddd;
+}
+.send-message > :is(input, button):focus {
+  outline: none;
+  border-bottom: 1px solid #7cc5d9;
+}
+.send-message > button {
+  width: 70px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 0 5px 5px 0;
+  color: #242443;
+  border: 1px solid #7cc5d9;
+  background-color: #7cc5d9;
+  font-weight: 600;
+}
+
+
